@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-10-05T15:06:04.507Z",
+  "sessionId": "sess_be567c03-3a8e-467a-b39a-f5ca4f42c52f",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "tools/make-screenshot.js",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 20,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>UA Fake Filler — demo form</title>
+<style>
+  body { font: 14px/1.5 system-ui, sans-serif; max-width: 720px; margin: 30px auto; padding: 0 16px; color: #1f2937; }
+  fieldset { border: 1px solid #d1d5db; border-radius: 10px; margin: 14px 0; padding: 12px 16px 16px; }
+  legend { font-weight: 600; padding: 0 6px; }
+  label { display: inline-block; min-width: 150px; vertical-align: top; }
+  .field { margin: 8px 0; }
+  input, select, textarea { font: inherit; padding: 5px 8px; border: 1px solid #9ca3af; border-radius: 6px; min-width: 220px; }
+  input[type="color"], input[type="checkbox"], input[type="radio"], input[type="range"] { min-width: 0; }
+  input:invalid { border-color: #f87171; }
+  #report { position: fixed; top: 12px; right: 12px; background: #111827; color: #fff; padding: 10px 14px; border-radius: 10px; font-size: 13px; display: none; }
+  iframe { width: 100%; height: 70px; border: 1px dashed #9ca3af; border-radius: 8px; }
+  code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<h1>UA Fake Filler — demo form</h1>
+<p>Load this page, click the extension (or press <code>Alt+Shift+F</code>), then submit the form.
+The report should show <code>0 invalid</code>. Fields that must be skipped stay empty.</p>
+
+<form id="demo" novalidate="false">
+  <fieldset>
+    <legend>Identity (typed + pattern validations)</legend>
+    <div class="field"><label>First name</label><input name="first_name" required maxlength="20"></div>
+    <div class="field"><label>Last name</label><input name="last_name" required></div>
+    <div class="field"><label>Username</label><input name="username" pattern="[a-z0-9_.-]{4,16}" title="4-16 chars lowercase" required></div>
+    <div class="field"><label>Email</label><input type="email" name="email" required></div>
+    <div class="field"><label>Password</label><input type="password" name="passwd"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="8+ chars, upper, lower, digit" required></div>
+    <div class="field"><label>Phone</label><input type="tel" name="phone" pattern="^\+?[0-9]{7,15}$" required></div>
+    <div class="field"><label>Website</label><input type="url" name="website"></div>
+    <div class="field"><label>Search</label><input type="search" name="q" placeholder="Search products..."></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Address</legend>
+    <div class="field"><label>Street address</label><input name="street" autocomplete="address-line1" required></div>
+    <div class="field"><label>Apt / unit</label><input name="line2" autocomplete="address-line2"></div>
+    <div class="field"><label>City</label><input name="city" required></div>
+    <div class="field"><label>State</label>
+      <select name="state" required>
+        <option value="">-- Select --</option>
+        <option>CA</option><option>NY</option><option>TX</option><option>FL</option><option>WA</option>
+      </select></div>
+    <div class="field"><label>ZIP</label><input name="zip" pattern="\d{5}" minlength="5" maxlength="5" required></div>
+    <div class="field"><label>Country</label>
+      <select name="country">
+        <option value="">Choose a country</option>
+        <option>United States</option><option>Canada</option><option>Germany</option>
+        <option>Japan</option><option>Australia</option>
+      </select></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Numbers & dates (min/max/step)</legend>
+    <div class="field"><label>Age</label><input type="number" name="age" min="18" max="99" step="1" required></div>
+    <div class="field"><label>Donation</label><input type="number" name="amount" min="1" max="500" step="0.5"></div>
+    <div class="field"><label>Volume</label><input type="range" name="vol" min="0" max="100" step="10"></div>
+    <div class="field"><label>Date of birth</label><input type="date" name="dob" required></div>
+    <div class="field"><label>Expiry date</label><input type="date" name="expires" min="2026-01-01" max="2030-12-31"></div>
+    <div class="field"><label>Appointment</label><input type="datetime-local" name="appt"></div>
+    <div class="field"><label>Time</label><input type="time" name="time"></div>
+    <div class="field"><label>Month</label><input type="month" name="month"></div>
+    <div class="field"><label>Week</label><input type="week" name="week"></div>
+    <div class="field"><label>Fav color</label><input type="color" name="favcolor"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Choices</legend>
+    <div class="field"><label>Plan</label>
+      <input type="radio" name="plan" value="free" required> Free
+      <input type="radio" name="plan" value="pro"> Pro
+      <input type="radio" name="plan" value="team"> Team</div>
+    <div class="field"><label>Terms</label><input type="checkbox" name="terms" required> I agree</div>
+    <div class="field"><label>Newsletter</label><input type="checkbox" name="newsletter"> Subscribe</div>
+    <div class="field"><label>Experience</label>
+      <select name="level">
+        <option value="">Select level</option><option>Junior</option><option>Mid</option><option>Senior</option>
+      </select></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Long text & misc</legend>
+    <div class="field"><label>Feedback</label><textarea name="feedback" minlength="40" maxlength="500" required></textarea></div>
+    <div class="field"><label>Rich text</label><div contenteditable="true" style="border:1px solid #9ca3af;border-radius:6px;min-height:40px;padding:6px"></div></div>
+    <div class="field"><label>Referral code</label><input name="ref" pattern="[A-Z0-9]{3}-[A-Z0-9]{3}" title="XXX-YYY uppercase"></div>
+    <div class="field"><label>OTP</label><input name="otp_code" inputmode="numeric" maxlength="6"></div>
+    <div class="field"><label>Card number</label><input name="ccNum" maxlength="19"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Must stay empty</legend>
+    <div class="field"><label>CAPTCHA</label><input name="captcha_response"></div>
+    <div class="field"><label>Opted out</label><input name="manual" data-uaff-skip="1"></div>
+    <div class="field"><label>Disabled</label><input name="locked" disabled></div>
+    <div class="field"><label>Readonly</label><input name="fixed" value="read-only" readonly></div>
+    <div class="field"><label>Hidden</label><input type="hidden" name="secret"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Same-origin iframe field</legend>
+    <iframe srcdoc='<form><label style="font:12px system-ui">Inside iframe </label><input name="iframe_email" type="email" placeholder="should fill too"></form>'></iframe>
+  </fieldset>
+
+  <p><button type="submit">Submit (validates)</button> <button type="reset">Reset</button></p>
+</form>
+
+<div id="report"></div>
+<script>
+  document.getElementById('demo').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const bad = [...this.elements].filter((el) => el.willValidate && !el.checkValidity());
+    const rep = document.getElementById('report');
+    rep.style.display = 'block';
+    rep.innerHTML = bad.length
+      ? '❌ ' + bad.length + ' invalid: ' + bad.map((b) => b.name || b.type).join(', ')
+      : '✅ form is valid — 0 invalid fields';
+    if (!bad.length) setTimeout(() => (rep.style.display = 'none'), 4000);
+  });
+</script>
+</body>
+</html>

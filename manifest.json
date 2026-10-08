@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "UA Fake Filler",
+  "short_name": "UA Fake Filler",
+  "version": "1.0.0",
+  "description": "Smart, lightweight form filler: fills every field with realistic fake data and respects each field's validation rules (pattern, length, range, format).",
+  "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "UA Fake Filler (Alt+Shift+F to fill instantly)",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "commands": {
+    "fill-page": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "Fill the current page with fake data"
+    }
+  }
+}

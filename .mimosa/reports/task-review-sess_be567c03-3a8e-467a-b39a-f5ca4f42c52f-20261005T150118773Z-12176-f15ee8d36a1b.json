@@ -1,0 +1,374 @@
+{
+  "schema_version": "mimosa-task-review/v2",
+  "run_id": "20261005T150118773Z-12176-f15ee8d36a1b",
+  "run_status": "inconclusive",
+  "errors": [
+    {
+      "stage": "candidate-select",
+      "target": "test/debug-dump.js",
+      "reason": "changed_file_unreadable: observed changed file no longer exists or cannot be read"
+    },
+    {
+      "stage": "candidate-select",
+      "target": "test/debug-fill.js",
+      "reason": "changed_file_unreadable: observed changed file no longer exists or cannot be read"
+    },
+    {
+      "stage": "candidate-select",
+      "target": "test/debug-sel.js",
+      "reason": "changed_file_unreadable: observed changed file no longer exists or cannot be read"
+    },
+    {
+      "stage": "baseline",
+      "target": ".",
+      "reason": "baseline_partial: baseline capture had enumeration or snapshot errors"
+    }
+  ],
+  "coverage": {
+    "schema_version": "mimosa-hook-coverage/v1",
+    "status": "partial",
+    "scope": "hook_observed_diff",
+    "baseline": {
+      "complete": false,
+      "captured_files": 9,
+      "candidate_limit": 5000,
+      "truncated": false,
+      "enumeration_error_count": 0,
+      "snapshot_error_count": 0,
+      "compensated_target_count": 6
+    },
+    "change_tracking": {
+      "touched_observed": 9,
+      "touched_retained": 9,
+      "truncated": false,
+      "bash_mutation": true,
+      "bash_discovered": 6,
+      "bash_discovery_limit": 80,
+      "bash_discovery_truncated": false
+    },
+    "candidates": {
+      "eligible_files": 6,
+      "selected_files": 6,
+      "limit": 20,
+      "truncated": false
+    },
+    "scanning": {
+      "required_files": 6,
+      "scanned_files": 6,
+      "skipped_files": 0,
+      "failed_files": 0,
+      "project_checks_required": 0,
+      "project_checks_completed": 0
+    },
+    "notification": {
+      "eligible_findings": 0,
+      "detailed_findings": 0,
+      "detail_limit": 3,
+      "truncated": false
+    },
+    "reason_counts": {
+      "changed_file_unreadable": 3,
+      "baseline_partial": 1,
+      "project_check_failed": 4
+    },
+    "reasons": [
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": "test/debug-dump.js",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affects_completion": true
+      },
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": "test/debug-fill.js",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affects_completion": true
+      },
+      {
+        "code": "changed_file_unreadable",
+        "stage": "candidate-select",
+        "target": "test/debug-sel.js",
+        "detail": "observed changed file no longer exists or cannot be read",
+        "affects_completion": true
+      },
+      {
+        "code": "baseline_partial",
+        "stage": "baseline",
+        "target": ".",
+        "detail": "baseline capture had enumeration or snapshot errors",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": "test/debug-dump.js",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": "test/debug-fill.js",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "candidate-select",
+        "target": "test/debug-sel.js",
+        "detail": "changed_file_unreadable: observed changed file no longer exists or cannot be read",
+        "affects_completion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline",
+        "target": ".",
+        "detail": "baseline_partial: baseline capture had enumeration or snapshot errors",
+        "affects_completion": true
+      }
+    ],
+    "reasons_truncated": false
+  },
+  "generated_at": "2026-10-05T15:01:18.773Z",
+  "session_id": "sess_be567c03-3a8e-467a-b39a-f5ca4f42c52f",
+  "target": ".",
+  "revision": null,
+  "rules_version": "unavailable",
+  "diff_hash": "a7da85eafde2821e77c32ab03ba8271ae09b8fac993b901ba25efb4207a56a3a",
+  "diff": {
+    "algorithm": "sha256",
+    "changed_file_count": 6,
+    "changed_files": [
+      {
+        "file": "content/detect.js",
+        "ranges": [
+          {
+            "start": 37,
+            "end": 37
+          },
+          {
+            "start": 108,
+            "end": 115
+          },
+          {
+            "start": 131,
+            "end": 132
+          },
+          {
+            "start": 166,
+            "end": 167
+          },
+          {
+            "start": 170,
+            "end": 170
+          },
+          {
+            "start": 192,
+            "end": 193
+          }
+        ],
+        "before_hash": "2436bdb8e385c657f39a5cfb97dc2d7e4d2a796bfe836ac50e3dd9bcfb851454",
+        "after_hash": "9e07798c0f2712019e509647015efb6d861461858f788bba54b813747602f8a0"
+      },
+      {
+        "file": "content/fill.js",
+        "ranges": [
+          {
+            "start": 124,
+            "end": 127
+          },
+          {
+            "start": 178,
+            "end": 182
+          },
+          {
+            "start": 186,
+            "end": 186
+          },
+          {
+            "start": 228,
+            "end": 245
+          },
+          {
+            "start": 267,
+            "end": 272
+          },
+          {
+            "start": 284,
+            "end": 290
+          }
+        ],
+        "before_hash": "770d4ab5e75c2f93a50514cb6c1313d5ebf6128d9c22cd467e27632bc87d6712",
+        "after_hash": "ac3e4d84a737bd2ec119785943e876727d94a4002f199a0aef75189a1595ff64"
+      },
+      {
+        "file": "content/generators.js",
+        "ranges": [
+          {
+            "start": 110,
+            "end": 112
+          }
+        ],
+        "before_hash": "fd54600f732c7a1f9c03309c7311e0d74d8f9f00f338fcee4328b0ce340f237e",
+        "after_hash": "92d123415a450e3954f6927849d49e1728690e7bf25fd4126d931335144ce97d"
+      },
+      {
+        "file": "test/e2e.js",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 124
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "07a1830a80c77fb393989f20c406b0f89f380649720d6b93f7778cdbc2ced667"
+      },
+      {
+        "file": "test/run-tests.js",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 228
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "32de35f2ee9bbbe14d9844c3a09330f52ea0875124072b1a51a59e68ae15b3f7"
+      },
+      {
+        "file": "test/stress.js",
+        "ranges": [
+          {
+            "start": 1,
+            "end": 29
+          }
+        ],
+        "before_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "after_hash": "06202ea24504b3468fe9fe7a00ce292bbf1ce22a3b12d18bb0ad37601e3b4845"
+      }
+    ]
+  },
+  "timing": {
+    "started_at": "2026-10-05T15:01:17.340Z",
+    "completed_at": "2026-10-05T15:01:18.773Z",
+    "duration_ms": 1433,
+    "measurement": "hook_wall_clock"
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "model_calls": 0,
+    "measurement": "known-zero"
+  },
+  "telemetry": {
+    "schemaVersion": "mimosa-gate-telemetry/v1",
+    "profile": "gate",
+    "operation": "Stop",
+    "outcome": "partial/INCONCLUSIVE",
+    "latencyMs": 1433,
+    "peakMemoryBytes": 138252288,
+    "memoryMeasurement": "max-observed-process-rss",
+    "scannedFiles": 6,
+    "cache": {
+      "hits": 0,
+      "misses": 0,
+      "measurement": "not-applicable"
+    },
+    "denyCount": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "total": 0,
+      "modelCalls": 0,
+      "measurement": "known-zero"
+    }
+  },
+  "finding_count": 0,
+  "rewake_finding_count": 0,
+  "evidence_boundary": {
+    "scan": "candidate",
+    "static_fix_verification": "observed_static_only",
+    "runtime_verification": "not_performed"
+  },
+  "finding_events": [
+    {
+      "finding_id": "mimosa-0786e157dfe2054968875b24",
+      "file": "test/run-tests.js",
+      "line": 29,
+      "rule_id": "security",
+      "severity": "high",
+      "category": "代码注入",
+      "status": "blocked",
+      "decision": "deny",
+      "at": "2026-10-05T14:44:42.297Z",
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "source": "semgrep",
+        "evidence_hash": "61d443a6829da10d61b46fe62de612fca63c3dec1083df7822b65ac80f188594",
+        "runtime_oracle": false
+      }
+    },
+    {
+      "finding_id": "mimosa-0786e157dfe2054968875b24",
+      "file": "test/run-tests.js",
+      "line": 29,
+      "rule_id": "security",
+      "severity": "high",
+      "category": "代码注入",
+      "status": "fixed_candidate",
+      "decision": "repair_observed",
+      "at": "2026-10-05T14:45:46.313Z",
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "source": "semgrep",
+        "evidence_hash": "61d443a6829da10d61b46fe62de612fca63c3dec1083df7822b65ac80f188594",
+        "candidate_before_evidence_hash": "61d443a6829da10d61b46fe62de612fca63c3dec1083df7822b65ac80f188594",
+        "post_change_evidence_hash_at_previous_location": "ccbefd95315aa0b24979b1b8bd19b5c052f53e589cb64188ce691909b529c3c2",
+        "runtime_oracle": false,
+        "verification": {
+          "method": "mimosa-posttool-static-rescan",
+          "finding_absent": true,
+          "runtime_oracle": false
+        }
+      }
+    },
+    {
+      "finding_id": "mimosa-0786e157dfe2054968875b24",
+      "file": "test/run-tests.js",
+      "line": 29,
+      "rule_id": "security",
+      "severity": "high",
+      "category": "代码注入",
+      "status": "static_verified",
+      "decision": "static_rescan_passed",
+      "at": "2026-10-05T14:45:46.313Z",
+      "evidence": {
+        "kind": "static_scan",
+        "boundary": "observed",
+        "producer": "deterministic",
+        "source": "semgrep",
+        "evidence_hash": "61d443a6829da10d61b46fe62de612fca63c3dec1083df7822b65ac80f188594",
+        "candidate_before_evidence_hash": "61d443a6829da10d61b46fe62de612fca63c3dec1083df7822b65ac80f188594",
+        "post_change_evidence_hash_at_previous_location": "ccbefd95315aa0b24979b1b8bd19b5c052f53e589cb64188ce691909b529c3c2",
+        "runtime_oracle": false,
+        "verification": {
+          "method": "mimosa-posttool-static-rescan",
+          "finding_absent": true,
+          "runtime_oracle": false
+        }
+      }
+    }
+  ],
+  "findings": [],
+  "artifacts": {
+    "immutable_report": ".mimosa/reports/task-review-sess_be567c03-3a8e-467a-b39a-f5ca4f42c52f-20261005T150118773Z-12176-f15ee8d36a1b.json",
+    "latest_report": ".mimosa/reports/task-review-sess_be567c03-3a8e-467a-b39a-f5ca4f42c52f.json",
+    "history_summary": ".mimosa/history/run-20261005T150118773Z-12176-f15ee8d36a1b.json"
+  }
+}

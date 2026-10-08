@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "mimosa-finding-history/v1",
+  "runId": "20261005T150118773Z-12176-f15ee8d36a1b",
+  "runStatus": "inconclusive",
+  "errors": [
+    "candidate-select:test/debug-dump.js: changed_file_unreadable: observed changed file no longer exists or cannot be read",
+    "candidate-select:test/debug-fill.js: changed_file_unreadable: observed changed file no longer exists or cannot be read",
+    "candidate-select:test/debug-sel.js: changed_file_unreadable: observed changed file no longer exists or cannot be read",
+    "baseline:.: baseline_partial: baseline capture had enumeration or snapshot errors"
+  ],
+  "target": ".",
+  "revision": null,
+  "diffHash": "a7da85eafde2821e77c32ab03ba8271ae09b8fac993b901ba25efb4207a56a3a",
+  "rulesVersion": "unavailable",
+  "recordedAt": "2026-10-05T15:01:18.773Z",
+  "timing": {
+    "startedAt": "2026-10-05T15:01:17.340Z",
+    "completedAt": "2026-10-05T15:01:18.773Z",
+    "durationMs": 1433
+  },
+  "tokens": {
+    "input": 0,
+    "output": 0,
+    "total": 0,
+    "modelCalls": 0,
+    "measurement": "known-zero"
+  },
+  "findings": {
+    "total": 1,
+    "bySeverity": {
+      "high": 1
+    },
+    "byStatus": {
+      "static_verified": 1
+    }
+  },
+  "coverage": {
+    "status": "partial",
+    "reasonCounts": {
+      "changed_file_unreadable": 3,
+      "baseline_partial": 1,
+      "project_check_failed": 4
+    }
+  },
+  "evidenceBoundary": "static_only",
+  "immutableReport": ".mimosa/reports/task-review-sess_be567c03-3a8e-467a-b39a-f5ca4f42c52f-20261005T150118773Z-12176-f15ee8d36a1b.json"
+}
