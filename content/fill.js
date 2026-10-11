@@ -370,7 +370,9 @@
           'input[type="radio"][name="' + (CSS.escape(el.name || '')) + '"]'))
           .filter((r) => UAF.isVisible(r) && !r.disabled);
         if (!group.length) { skipped++; continue; }
-        snap.push(snapshot(el));
+        // snapshot every member: fillRadioGroup checks a random one, so undo
+        // must be able to uncheck it and recheck the original
+        for (const r of group) snap.push(snapshot(r));
         const res = fillRadioGroup(group, rng);
         commit(res.el, true);
         if (settings.highlight) flash(res.el);

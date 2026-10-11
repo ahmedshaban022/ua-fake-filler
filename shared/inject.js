@@ -20,6 +20,9 @@ function sumResults(results) {
       totals.filled += v.filled || 0;
       totals.invalid += v.invalid || 0;
       totals.skipped += v.skipped || 0;
+      // undo results carry `restored`; fill results don't, and the popup
+      // renders a different line per shape
+      if (v.restored != null) totals.restored = (totals.restored || 0) + v.restored;
       if (v.filled) totals.frames += 1;
     }
   }

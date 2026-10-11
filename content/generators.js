@@ -62,6 +62,15 @@
   function address(rng) {
     return UAF.int(rng, 12, 9800) + ' ' + UAF.pick(rng, D.streets);
   }
+  function coupon(rng, ctx) {
+    // uppercase alphanumeric, no separators — restrictive pattern
+    // attributes and checkValidity stay happy
+    const target = Math.min(Math.max((ctx && ctx.max) || 10, 6), 12);
+    const abc = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+    let s = '';
+    while (s.length < target) s += abc[Math.floor(rng() * abc.length)];
+    return s;
+  }
   function dateBetween(rng, min, max) {
     const lo = min ? min.getTime() : Date.now() - 40 * 365.25 * 86400000;
     const hi = max ? max.getTime() : Date.now() + 2 * 365.25 * 86400000;
@@ -171,7 +180,8 @@
       const v = UAF.int(rng, Math.min(lo, hi) * 10, Math.max(lo, hi) * 10) / 10;
       return Number.isInteger(v) ? String(v) : v.toFixed(1);
     },
-    quantity: (rng, ctx) => GEN.integer(rng, ctx)
+    quantity: (rng, ctx) => GEN.integer(rng, ctx),
+    coupon
   };
 
   // Kinds that produce date strings; the fill engine formats the Date per

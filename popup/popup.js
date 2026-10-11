@@ -29,6 +29,10 @@ function showStats(res, verb) {
     el.textContent = 'Could not run on this page (try a normal http(s) page).';
     return;
   }
+  if (res.restored != null) {
+    el.innerHTML = `${verb}: <b>${res.restored}</b> field${res.restored === 1 ? '' : 's'} restored`;
+    return;
+  }
   el.innerHTML =
     `${verb}: <b>${res.filled}</b> filled` +
     (res.invalid ? `, <b>${res.invalid}</b> unmatched` : '') +
